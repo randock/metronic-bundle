@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Randock\RandockMetronicBundle;
+namespace Randock\MetronicBundle;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -11,4 +12,13 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class RandockMetronicBundle extends Bundle
 {
+    public function build(ContainerBuilder $container)
+    {
+        $container->loadFromExtension('twig', array(
+            'paths' => array(
+                '%kernel.root_dir%/../vendor/randock/metronic-bundle/src/Resources/views' => 'RandockMetronicBundle',
+            ),
+        ));
+    }
 }
+
