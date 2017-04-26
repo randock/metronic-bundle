@@ -1,0 +1,121 @@
+{%  extends 'RandockMetronicBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="page-wrapper">
+        <div class="page-wrapper-row">
+            <div class="page-wrapper-top">
+                <!-- BEGIN HEADER -->
+                <div class="page-header">
+                    <!-- BEGIN HEADER TOP -->
+                    <div class="page-header-top">
+                        <div class="container">
+                            <!-- BEGIN LOGO -->
+                            <div class="page-logo">
+                                <a href="index.html">
+                                    {% image '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/img/logo-default.jpg' %}
+                                    <img src="{{ asset_url }}" alt="logo" class="logo-default" />
+                                    {% endimage %}
+                                </a>
+                            </div>
+                            <!-- END LOGO -->
+                            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                            <a href="javascript:;" class="menu-toggler"></a>
+                            <!-- END RESPONSIVE MENU TOGGLER -->
+                            <!-- BEGIN TOP NAVIGATION MENU -->
+                            {% block topNavigationMenu %}{%  include '@RandockMetronicBundle/layout/topNavigationMenu.html.twig' %}{%  endblock %}
+                            <!-- END TOP NAVIGATION MENU -->
+                        </div>
+                    </div>
+                    <!-- END HEADER TOP -->
+                    <!-- BEGIN HEADER MENU -->
+                    {% block headerMenu %}{%  include '@RandockMetronicBundle/layout/headerMenu.html.twig' %}{%  endblock %}
+                    <!-- END HEADER MENU -->
+                </div>
+                <!-- END HEADER -->
+            </div>
+        </div>
+        <div class="page-wrapper-row full-height">
+            <div class="page-wrapper-middle">
+                <!-- BEGIN CONTAINER -->
+                <div class="page-container">
+                    <!-- BEGIN CONTENT -->
+                    <div class="page-content-wrapper">
+                        <!-- BEGIN CONTENT BODY -->
+                        <!-- BEGIN PAGE HEAD-->
+                        <div class="page-head">
+                            <div class="container">
+                                <!-- BEGIN PAGE TITLE -->
+                                <div class="page-title">
+                                    <h1>{% block title %} Title {% endblock %}
+                                        <small>{% block subtitle %} subtitle {% endblock %}</small>
+                                    </h1>
+                                </div>
+                                <!-- END PAGE TITLE -->
+                                <!-- BEGIN PAGE TOOLBAR -->
+                                <div class="page-toolbar">
+                                    <!-- BEGIN THEME PANEL -->
+                                    <div class="btn-group btn-theme-panel">
+                                        <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
+                                            <i class="icon-settings"></i>
+                                        </a>
+                                    </div>
+                                    <!-- END THEME PANEL -->
+                                </div>
+                                <!-- END PAGE TOOLBAR -->
+                            </div>
+                        </div>
+                        <!-- END PAGE HEAD-->
+                        <!-- BEGIN PAGE CONTENT BODY -->
+                        <div class="page-content">
+                            <div class="container">
+                                <!-- BEGIN PAGE BREADCRUMBS -->
+                                <ul class="page-breadcrumb breadcrumb">
+                                    {% block breadcrumb %}
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                            <i class="fa fa-circle"></i>
+                                        </li>
+                                        <li>
+                                            <a href="#">More</a>
+                                            <i class="fa fa-circle"></i>
+                                        </li>
+                                        <li>
+                                            <a href="#">Tables</a>
+                                            <i class="fa fa-circle"></i>
+                                        </li>
+                                        <li>
+                                            <span>Datatables</span>
+                                        </li>
+                                    {% endblock %}
+                                </ul>
+                                <!-- END PAGE BREADCRUMBS -->
+                                <!-- BEGIN PAGE CONTENT INNER -->
+                                <div class="page-content-inner">
+                                    {% block content %}
+
+                                    {% endblock %}
+                                </div>
+                                <!-- END PAGE CONTENT INNER -->
+                            </div>
+                        </div>
+                        <!-- END PAGE CONTENT BODY -->
+                        <!-- END CONTENT BODY -->
+                    </div>
+                    <!-- END CONTENT -->
+
+                </div>
+                <!-- END CONTAINER -->
+            </div>
+        </div>
+        <div class="page-wrapper-row">
+            <div class="page-wrapper-bottom">
+                <!-- BEGIN FOOTER -->
+                <!-- BEGIN INNER FOOTER -->
+                {% block footer %}{%  include '@RandockMetronicBundle/layout/footer.html.twig' %}{%  endblock %}
+                <!-- END INNER FOOTER -->
+                <!-- END FOOTER -->
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{
+  "name": "randock/metronic-bundle",
+  "description": "Randock Metronic Bundle",
+  "type": "symfony-bundle",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Randock\\MetronicBundle\\": "src/"
+    }
+  }
+}
