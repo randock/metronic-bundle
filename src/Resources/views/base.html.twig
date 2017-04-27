@@ -13,23 +13,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    {% stylesheets
-    "bundles/randockmetronic/assets/global/plugins/font-awesome/css/font-awesome.min.css"
-    "bundles/randockmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
-    "bundles/randockmetronic/sass/bootstrap.scss"
+    {% block stylesheets %}
+        {% stylesheets
+        "bundles/randockmetronic/assets/global/plugins/font-awesome/css/font-awesome.min.css"
+        "bundles/randockmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
+        "bundles/randockmetronic/sass/bootstrap.scss"
 
-    "bundles/randockmetronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
+        "bundles/randockmetronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css"
 
-    "bundles/randockmetronic/sass/global/components-md.scss"
-    "bundles/randockmetronic/sass/global/plugins-md.scss"
+        "bundles/randockmetronic/sass/global/components-md.scss"
+        "bundles/randockmetronic/sass/global/plugins-md.scss"
 
-    "bundles/randockmetronic/sass/layouts/layout3/layout.scss"
-    "bundles/randockmetronic/sass/layouts/layout3/themes/default.scss"
-    "bundles/randockmetronic/sass/layouts/layout3/custom.scss"
+        "bundles/randockmetronic/sass/layouts/layout3/layout.scss"
+        "bundles/randockmetronic/sass/layouts/layout3/themes/default.scss"
+        "bundles/randockmetronic/sass/layouts/layout3/custom.scss"
 
-    filter='cssrewrite,?uglifycss' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
+        filter='cssrewrite,?uglifycss' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+
 </head>
 
 
