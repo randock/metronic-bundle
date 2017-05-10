@@ -28,7 +28,6 @@ class RandockMetronicBundle extends Bundle
                     'inputs' => array(
                         "bundles/randockmetronic/sass/bootstrap.scss",
 
-
                         "bundles/randockmetronic/sass/global/components-md.scss",
                         "bundles/randockmetronic/sass/global/plugins-md.scss",
 
@@ -69,4 +68,3 @@ class RandockMetronicBundle extends Bundle
         ));
     }
 }
-
