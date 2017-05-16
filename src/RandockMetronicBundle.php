@@ -46,6 +46,7 @@ class RandockMetronicBundle extends Bundle
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery.blockui.min.js",
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
+                        "@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js",
 
                         "@RandockMetronicBundle/Resources/public/assets/global/scripts/datatable.js",
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/datatables/datatables.min.js",
