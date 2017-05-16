@@ -22,6 +22,8 @@ class RandockMetronicBundle extends Bundle
                         "bundles/randockmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
 
                         "bundles/randockmetronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",
+                        
+                        "bundles/randockmetronic/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css",
                     ),
                 ),
                 'randock_metronic_scss' => array(
