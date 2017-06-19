@@ -7,5 +7,8 @@
     "psr-4": {
       "Randock\\MetronicBundle\\": "src/"
     }
+  },
+  "require": {
+    "knplabs/knp-menu-bundle": "^2.1"
   }
 }
