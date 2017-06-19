@@ -1,0 +1,88 @@
+<li class="dropdown dropdown-extended dropdown-tasks {% if options.dark is defined %}dropdown-dark {% endif %}" id="header_task_bar">
+    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+
+        {% if options.icon is defined %}
+            <i class="{{ options.icon }}"></i>
+        {% else %}
+            <i class="fa fa-tasks"></i>
+        {% endif %}
+
+        {% if items|length > 0 %}
+        <span class="badge badge-default">{{ items|length }}</span>
+        {% endif %}
+
+    </a>
+    <ul class="dropdown-menu">
+        {% if options.header is defined %}
+            <li class="external"
+                    {% if options.header.backgroundColor is defined %}
+                        style="background: {{ options.header.backgroundColor }}"
+                    {% endif %}
+            >
+                <h3
+                        {% if options.header.link is defined %}
+                            style="margin-right: 45px;"
+                        {% endif %}
+                >
+                    {{ options.header.text }}
+                </h3>
+
+                {% if options.header.link is defined %}
+                    <a href="{{ options.header.link.url }}"
+                            {% if options.header.link.color is defined %}
+                                style = "color: {{ options.header.link.color }}"
+                            {% endif %}
+                    >{{ options.header.link.text }}
+                    </a>
+                {% endif %}
+
+
+            </li>
+        {% endif %}
+        <li>
+            <ul class="dropdown-menu-list scroller"
+                    {% if options.height is defined %}
+                        style="height:{{ options.height }}"
+                    {% else %}
+                        style="height: 200px;"
+                    {% endif %}
+
+                    {% if options.dynamicElementsColor is defined %}
+                        data-handle-color="{{ options.dynamicElementsColor }}"
+                    {% else %}
+                        data-handle-color="#637283"
+                    {% endif %}
+            >
+                <li>
+                    {% for item in items %}
+                        {% if item.getUrl() is not null %}
+                            <a href="{{ item.getUrl() }}">
+                        {% else %}
+                            <a href="javascript:;">
+                        {% endif %}
+
+                        <span class="task">
+                            {% if item.getTitle() is not null %}
+                                <span class="desc">{{ item.getTitle() }} </span>
+                            {% if item.getPercent() is not null %}
+                                <span class="percent">{{ item.getPercent() }}%</span>
+                            {% endif %}
+                        </span>
+
+                        {% if item.getPercent() %}
+                        <span class="progress">
+                            <span style="width: {{ item.getPercent() }}%;" class="progress-bar
+                            progress-bar-{% if item.getProgressBarType() is not null %}{{ item.getProgressBarType() }}{% else %}success{% endif %}" aria-valuenow="{{ item.getPercent() }}" aria-valuemin="0" aria-valuemax="100">
+                                <span class="sr-only">{{ item.getPercent() }}% Complete</span>
+                            </span>
+                        </span>
+                        {% endif %}
+                        {% endif %}
+                        </a>
+                    </a>
+                    {% endfor %}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>

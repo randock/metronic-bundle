@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Randock\MetronicBundle;
 
+use Randock\MetronicBundle\DependencyInjection\Compiler\HeaderListPass;
+use Randock\MetronicBundle\DependencyInjection\Compiler\MenuPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -21,8 +23,6 @@ class RandockMetronicBundle extends Bundle
                         "bundles/randockmetronic/assets/global/plugins/font-awesome/css/font-awesome.min.css",
                         "bundles/randockmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
 
-                        "bundles/randockmetronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",
-                        
                         "bundles/randockmetronic/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css",
                     ),
                 ),
@@ -69,5 +69,9 @@ class RandockMetronicBundle extends Bundle
                 '%kernel.root_dir%/../vendor/randock/metronic-bundle/src/Resources/views' => 'RandockMetronicBundle',
             ),
         ));
+
+        $container->addCompilerPass(new HeaderListPass());
+        $container->addCompilerPass(new MenuPass());
+
     }
 }
