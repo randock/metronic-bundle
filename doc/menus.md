@@ -11,7 +11,6 @@ Example:
 
 The code inside the if will be executed for the top_menu.
 ```php
-
     if (MenuBuilder::TOP_MENU === $typeMenu){
         //some code
     }
@@ -94,9 +93,9 @@ The top menu will show just the items with 1 depth.
 #### 2.5 Top menu divider
 
 To add a divider to the menu, we have to add a child to the root with the function 
-```
+```php
 ->setAttribute('class', 'divider')
-``
+```
 This code (when rendered in a topMenu) will produce a menu with two items diveded by a divider:
 
 ```php
