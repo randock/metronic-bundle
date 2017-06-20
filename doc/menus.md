@@ -129,8 +129,11 @@ This code (when rendered in a topMenu) will produce a menu with two items divede
 
 ### 3 - Create the service
 
-Create a service with the class that has just been created and with the tag 
-{ name: metronic.menu_add_items}
+Create a service with the class that has just been created and with the tags 
+{ name: metronic.menu_add_items, priority: X}. 
+
+The priority is used to determine in which order
+the services will be called. The lower the number the earlier the service will be called.
  
 Example:
  
@@ -138,4 +141,6 @@ Example:
        service.name:
             class: ClassName
             tags:
-                - { name: metronic.menu_add_items }
+                - { name: metronic.menu_add_items, priority: 50 }
+
+
