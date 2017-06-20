@@ -9,6 +9,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class MenuBuilder
 {
+    public const MAIN_MENU = 'main_menu';
+    public const TOP_MENU = 'top_menu';
+
+
     /**
      * @var FactoryInterface
      */
@@ -47,7 +51,7 @@ class MenuBuilder
         $menu = $this->factory->createItem('topmenu');
         $menu->setChildrenAttribute('class', 'dropdown-menu dropdown-menu-default');
 
-        $this->getServices($menu, $this->factory, 'top_menu');
+        $this->getServices($menu, $this->factory, self::TOP_MENU);
 
         $this->reorderMenuItems($menu);
 
@@ -65,7 +69,7 @@ class MenuBuilder
         $menu = $this->factory->createItem('mainmenu');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
-        $this->getServices($menu, $this->factory, 'main_menu');
+        $this->getServices($menu, $this->factory, self::MAIN_MENU);
         foreach ($menu as $child){
             if($child->hasChildren()) {
                 $child->setAttribute('class', 'menu-dropdown classic-menu-dropdown');

@@ -3,13 +3,13 @@
 namespace Randock\MetronicBundle\DependencyInjection\Compiler\Exception;
 
 /**
- * Class serviceNotImplementHeaderListInterfaceException
+ * Class ServiceNotImplementHeaderListInterfaceException
  */
-class serviceDoesNotImplementHeaderListInterfaceException extends \Exception
+class ServiceDoesNotImplementHeaderListInterfaceException extends \Exception
 {
 
     /**
-     * serviceNotImplementHeaderListInterfaceException constructor.
+     * ServiceNotImplementHeaderListInterfaceException constructor.
      *
      * @param string $class
      */
