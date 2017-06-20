@@ -46,10 +46,6 @@ This code will add an item named ‘itemName’ to the root menu. Every item tha
 
     $menu->addChild(‘itemName’, ['uri' => 'javascript:;']); 
 
-
-----------
-
-
 	
 This code will add an item inside the previous item ‘itemName’ making it a submenu. The new item will have a link to the route defined by ‘route_name’.
 
@@ -65,12 +61,12 @@ It is highly recommended to use values with a margin between them. For example 1
 Example:
 	This code will add an item with an orderNumber value of 20 and then it will add a sibling item with a value of 10. As we said before, the item that we add with a lower value will be at the start of the menu.
  
-     $menu['Test']
+     	    $menu['Test']
                 ->addChild('Second Item',['uri' => 'javascript:;'])
                 ->setExtra('orderNumber', 20);
 
             $menu['Test']
-                ->addChild('First Item',['route' => 'javascript:;'])
+                ->addChild('First Item',['uri' => 'javascript:;'])
                 ->setExtra('orderNumber', 10);
 
  
