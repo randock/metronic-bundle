@@ -5,7 +5,7 @@
 1.1 - Create a service whose class implements the interface Randock\MetronicBundle\Headerbuilder\HeaderList\Definition\headerListInterface; and tagged as name: metronic.header_dropdown_list
 
 Example: 
-```
+```yaml
   metronicbundle.headerlist.2:
     class: Randock\Infrastructure\TaskBundle\HeaderList\TaskList
     arguments:
@@ -38,26 +38,26 @@ Example:
   - getOptions:
 No option is required. If they are not passed, the default value will be used.
 Example:
-```
-     [
-            'dark' => 'true',
-            'icon' => 'icon-bell',
-            'header' => [
-                'text' => $this->translator->transChoice(
-                    randock.artworkdash.task_list|randock.artworkdash.task_list_plural',
-                    count($tasks = $this->getTasks())
-                ),
-                'backgroundColor' => '#4D2A2A',
-                'color'=> '#A8DCB7',
-                'link' =>[
-                    'text' => 'View all',
-                    'url' => $this->router->generate('randock_artworkdash_dashboard_home'),
-                    'color'=> '#A8DCB7'
-                ],
-            ],
-            'height' => '200px',
-            'scrollColor' => '#637283'
-        ];
+```php
+[
+    'dark' => 'true',
+    'icon' => 'icon-bell',
+    'header' => [
+        'text' => $this->translator->transChoice(
+            randock.artworkdash.task_list|randock.artworkdash.task_list_plural',
+            count($tasks = $this->getTasks())
+        ),
+        'backgroundColor' => '#4D2A2A',
+        'color'=> '#A8DCB7',
+        'link' =>[
+            'text' => 'View all',
+            'url' => $this->router->generate('randock_artworkdash_dashboard_home'),
+            'color'=> '#A8DCB7'
+        ],
+    ],
+    'height' => '200px',
+    'scrollColor' => '#637283'
+];
 ```
 - dark: If it appears, the dark theme that comes in metronic will be used. If it does not appear, the light will be used. (It defines the color palette)
  
