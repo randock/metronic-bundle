@@ -24,7 +24,7 @@ The code inside the if will be executed just for the main_menu
 ```
 
 
-The code inside the if will be executed for both menus, so if we add elements, they will be added for both menus.
+The code inside the if will be executed for both menus, so if we add elements, they will be added to both menus.
 ```php
     if (MenuBuilder::TOP_MENU === $typeMenu || MenuBuilder::MAIN_MENU === $typeMenu) {
         //some code
@@ -48,13 +48,30 @@ $menu->addChild(‘itemName’, ['uri' => 'javascript:;']);
 This code will add an item inside the previous item ‘itemName’ making it a submenu. The new item will have a link to the route defined by ‘route_name’.
 
 ```php
-$menu[‘itemName’]->addChild(‘itemNameChild’, [‘route’ => ‘route_name’];
+$menu[‘itemName’]->addChild(‘itemNameChild’, [‘route’ => ‘route_name’]);
+```
+
+If the route needs a parameter we can add it with 'routeParameters' like in the next example:
+
+```php
+$menu[‘itemName’]
+    ->addChild(
+        ‘itemNameChild’, 
+        [
+            ‘route’ => ‘route_name’, 
+            'routeParameters' => ['id' => 3]
+        ]
+    );
 ```
  
 #### 2.2 - Giving order to the menu
 To order the menu we have to add an extra parameter ‘orderNumber’ with a value. This parameter will be added with the function setExtra. 
 
-The items sorted from the ones with a lower orderNumber value to the ones with a higher value. The items that have no value for ‘orderNumber’ will be after all the items that have a value.
+The items are sorted ascending, the lower the orderNumber, the higher in the menu it will appear.
+
+
+The items that have no value for ‘orderNumber’ will appear after all the items that have a value.
+
 It is highly recommended to use values with a margin between them. For example 10,20,30,40… This will be useful if we want to add some item between them.
  
 Example:
@@ -68,7 +85,8 @@ $menu['Test']
     ->addChild('First Item',['uri' => 'javascript:;'])
     ->setExtra('orderNumber', 10);
 ```
- 
+![menus1](img/menus1.png)
+
 #### 2.3 Item custom options
 The main menu items have the possibility to add to them an icon and a notification.
 	
@@ -85,6 +103,10 @@ $menu['Test']
         ]
     );
 ```
+
+The possible values for notificationType are: {MenuBuilder::SUCCESS, MenuBuilder::WARNING, MenuBuilder::DANGER, MenuBuilder::INFO} 
+![menus2](img/menus2.png)
+
 
 #### 2.4 Top menu constraint
 
@@ -123,7 +145,11 @@ $menu
         ]
     );
 ```
- 
+
+This code will produce the next output:
+
+![menus3](img/menus3.png)
+
  
 
 ### 3 - Create the service

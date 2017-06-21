@@ -68,7 +68,7 @@
                         {% if item.getTitle() is not null %}
                         <span class="details">
                             {% if item.getIcon() is not null %}
-                                <span class="label label-sm label-icon label-success" >
+                                <span class="label label-sm label-icon label-{% if item.getIconType() is not null %}{{ item.getIconType() }}{% else %}success{% endif %}" >
                                     <i class="{{ item.getIcon() }}"></i>
                                 </span>
                             {% endif %}
@@ -82,9 +82,9 @@
                         </span>
                         {% endif %}
 
-                        {% if item.getDownRightText() is not null %}
+                        {% if item.getBottomRightText() is not null %}
                             <span class="details show dropdownMenuDownRightText">
-                                {{ item.getDownRightText() }}
+                                {{ item.getBottomRightText() }}
                             </span>
                         {% endif %}
 

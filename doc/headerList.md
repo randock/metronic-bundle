@@ -2,7 +2,7 @@
  
 ### 1- Create a service 
 
-1.1 - Create a service whose class implements the interface Randock\MetronicBundle\Headerbuilder\HeaderList\Definition\headerListInterface; and tagged as name: metronic.header_dropdown_list
+1.1 - Create a service whose class implements the interface Randock\MetronicBundle\Headerbuilder\HeaderList\Definition\HeaderListInterface; and tagged as name: metronic.header_dropdown_list
 
 Example: 
 ```yaml
@@ -18,24 +18,30 @@ Example:
 
   
 1.2 Functions of the class:
-- getType: Should return a string that will have as value ‘Notification’ or ‘Task’ depending on which type of headerList we want (you can see screenshots of the types later in this document)
+- getType: Should return a string that will have as value HeaderListInterface::NOTIFICATION or HeaderListInterface::TASK depending on which type of headerList we want (you can see screenshots of the types later in this document)
  
-- getItems() (Notification): Should return an array of NotificationHeaderListItem objects that could have the next attributes:
+- getItems() (Notification): Should return an array of NotificationHeaderListItem objects that can have the next attributes:
   - title →  text of the first line of the element of the list
   - subtitle → text of the second line of the element of the list
   - url → The url to which we will be redirected after clicking on the header link
   - rightText → text that will be shown at the right of the title with a special format 
   - icon → icon that will be at the left of the title
-  - iconType→ type of the icon, it will set the icon background. Can have the values → {success, warning, info, danger}
-  - downRightText→ Text that will be at the down right corner (It isn’t in the picture)
+  - iconType→ type of the icon, it will set the icon background. 
+  Can have the values → {NotificationHeaderListItem::SUCCESS, NotificationHeaderListItem::WARNING, 
+  NotificationHeaderListItem::INFO, NotificationHeaderListItem::DANGER}
+  - bottomRightText→ Text that will be at the down right corner (It isn’t in the picture)
 
 ![alt text](img/NotificationHeaderList.png)
 
-- getItems() (Task): Should return an array of TaskHeaderListItem objects that could have the next attributes:
+- getItems() (Task): Should return an array of TaskHeaderListItem objects that can have the next attributes:
   - title →  text of the first line of the element of the list
   - url → The url to which we will be redirected after clicking on the header link
-  - percent → Will be shown in text on the right and in the progress bar
-  - progressBarType → The progress bar type. It can have the values → {success, warning, info, danger}
+  - percentage → Will be shown in text on the right and in the progress bar
+  - progressBarType → The progress bar type. It can have the values → {TaskHeaderListItem::SUCCESS, TaskHeaderListItem::WARNING, 
+                                                                         TaskHeaderListItem::INFO, TaskHeaderListItem::DANGER}
+
+![alt text](img/TaskHeaderList.png)
+
 
   - getOptions:
 No option is required. If they are not passed, the default value will be used.
@@ -61,12 +67,12 @@ Example:
     'scrollColor' => '#637283'
 ];
 ```
-- dark: If it appears, the dark theme that comes in metronic will be used. If it does not appear, the light will be used. (It defines the color palette)
+- dark: If it's set, the dark theme that comes in metronic will be used. If it does not appear, the light will be used. (It defines the color palette)
  
-- icon: it must has the necessary classes to represent an icon. Whether in bootstrap or FontAwesome
+- icon: it must have the necessary classes to represent an icon. Bootstrap and FontAwesome are supported.
  
 - header:
-  - Text: The text that will appear in the header
+  - text: The text that will appear in the header
   - backgroundColor: The header background color
   - color: The header text color
 	

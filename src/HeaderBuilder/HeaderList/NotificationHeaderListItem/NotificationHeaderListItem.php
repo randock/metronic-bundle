@@ -6,6 +6,11 @@ namespace Randock\MetronicBundle\Headerbuilder\HeaderList\NotificationHeaderList
 
 class NotificationHeaderListItem
 {
+    public const SUCCESS = 'success';
+    public const WARNING = 'warning';
+    public const DANGER = 'danger';
+    public const INFO = 'info';
+
     /**
      * @var string
      */
@@ -39,7 +44,7 @@ class NotificationHeaderListItem
     /**
      * @var string
      */
-    public $downRightText;
+    public $bottomRightText;
 
     /**
      * @return null|string
@@ -144,7 +149,7 @@ class NotificationHeaderListItem
     /**
      * @return string
      */
-    public function getIconType(): string
+    public function getIconType(): ?string
     {
         return $this->iconType;
     }
@@ -164,20 +169,21 @@ class NotificationHeaderListItem
     /**
      * @return string
      */
-    public function getDownRightText(): string
+    public function getBottomRightText(): string
     {
-        return $this->downRightText;
+        return $this->bottomRightText;
     }
 
     /**
-     * @param string $downRightText
+     * @param string $bottomRightText
      *
      * @return NotificationHeaderListItem
      */
-    public function setDownRightText(string $downRightText): NotificationHeaderListItem
+    public function setBottomRightText(string $bottomRightText): NotificationHeaderListItem
     {
-        $this->downRightText = $downRightText;
+        $this->bottomRightText = $bottomRightText;
 
         return $this;
     }
+
 }

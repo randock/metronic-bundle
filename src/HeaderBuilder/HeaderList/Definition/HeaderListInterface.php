@@ -6,6 +6,9 @@ namespace Randock\MetronicBundle\Headerbuilder\HeaderList\Definition;
 
 interface HeaderListInterface
 {
+    public const NOTIFICATION = 'notification';
+    public const TASK = 'task';
+
     /**
      * @return array
      */
@@ -21,3 +24,4 @@ interface HeaderListInterface
      */
     public function getType(): string;
 }
+

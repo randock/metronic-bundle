@@ -11,6 +11,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class MenuBuilder
 {
+    /**
+     * Constants used to indicate the menu to use in the MenuItemProviders
+     */
     public const MAIN_MENU = 'main_menu';
     public const TOP_MENU = 'top_menu';
 

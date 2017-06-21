@@ -17,16 +17,14 @@
         <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
         <div class="hor-menu  ">
 
-                    {{ knp_menu_render('mainMenu',
-                    {
-                        'allow_safe_labels': false,
-                        'currentClass': 'current',
-                        'ancestorClass' : 'active',
-                        'firstClass': '',
-                        'lastClass': '',
-                        'leaf_class': 'leaf_class',
-                        'template' : 'RandockMetronicBundle:menu:mainMenu.html.twig',
-                    }) }}
+            {{ knp_menu_render('mainMenu',
+            {
+                'allow_safe_labels': false,
+                'ancestorClass' : 'active',
+                'firstClass': null,
+                'lastClass': null,
+                'template' : 'RandockMetronicBundle:menu:mainMenu.html.twig',
+            }) }}
 
         </div>
         <!-- END MEGA MENU -->

@@ -6,6 +6,10 @@ namespace Randock\MetronicBundle\HeaderBuilder\HeaderList\TaskHeaderListItem;
 
 class TaskHeaderListItem
 {
+    public const SUCCESS = 'success';
+    public const WARNING = 'warning';
+    public const DANGER = 'danger';
+    public const INFO = 'info';
     /**
      * @var string
      */
@@ -19,7 +23,7 @@ class TaskHeaderListItem
     /**
      * @var int
      */
-    public $percent;
+    public $percentage;
 
     /**
      * @var string
@@ -69,19 +73,19 @@ class TaskHeaderListItem
     /**
      * @return int
      */
-    public function getPercent(): int
+    public function getPercentage(): int
     {
-        return $this->percent;
+        return $this->percentage;
     }
 
     /**
-     * @param int $percent
+     * @param int $percentage
      *
      * @return TaskHeaderListItem
      */
-    public function setPercent(int $percent): TaskHeaderListItem
+    public function setPercentage(int $percentage): TaskHeaderListItem
     {
-        $this->percent = $percent;
+        $this->percentage = $percentage;
 
         return $this;
     }
