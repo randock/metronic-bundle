@@ -29,6 +29,8 @@ Example:
   - iconType→ type of the icon, it will set the icon background. Can have the values → {success, warning, info, danger}
   - downRightText→ Text that will be at the down right corner (It isn’t in the picture)
 
+![alt text](img/NotificationHeaderList.png)
+
 - getItems() (Task): Should return an array of TaskHeaderListItem objects that could have the next attributes:
   - title →  text of the first line of the element of the list
   - url → The url to which we will be redirected after clicking on the header link
