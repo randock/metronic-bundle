@@ -1,13 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\DependencyInjection\Compiler\Exception;
 
 /**
- * Class ServiceNotImplementHeaderListInterfaceException
+ * Class ServiceNotImplementHeaderListInterfaceException.
  */
 class ServiceDoesNotImplementHeaderListInterfaceException extends \Exception
 {
-
     /**
      * ServiceNotImplementHeaderListInterfaceException constructor.
      *
@@ -15,7 +16,6 @@ class ServiceDoesNotImplementHeaderListInterfaceException extends \Exception
      */
     public function __construct(string $class)
     {
-        parent::__construct(sprintf('The %s must implement headerListInterface',$class));
+        parent::__construct(sprintf('The %s must implement headerListInterface', $class));
     }
-
 }

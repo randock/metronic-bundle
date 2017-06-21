@@ -1,17 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\Menu;
 
-use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class MenuBuilder
 {
     public const MAIN_MENU = 'main_menu';
     public const TOP_MENU = 'top_menu';
-
 
     /**
      * @var FactoryInterface
@@ -31,7 +32,7 @@ class MenuBuilder
     /**
      * MenuBuilder constructor.
      *
-     * @param FactoryInterface $factory
+     * @param FactoryInterface   $factory
      * @param ContainerInterface $container
      */
     public function __construct(FactoryInterface $factory, ContainerInterface $container)
@@ -70,8 +71,8 @@ class MenuBuilder
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
         $this->getServices($menu, $this->factory, self::MAIN_MENU);
-        foreach ($menu as $child){
-            if($child->hasChildren()) {
+        foreach ($menu as $child) {
+            if ($child->hasChildren()) {
                 $child->setAttribute('class', 'menu-dropdown classic-menu-dropdown');
                 $child->setAttribute('aria-haspopup', 'true');
                 $child->setChildrenAttribute('class', 'dropdown-menu');
@@ -87,18 +88,18 @@ class MenuBuilder
     /**
      * @param ItemInterface $item
      */
-    public function addSubmenu(ItemInterface $item){
+    public function addSubmenu(ItemInterface $item)
+    {
         foreach ($item as $child) {
-            $item->setAttribute('aria-haspopup','true');
+            $item->setAttribute('aria-haspopup', 'true');
 
-            if($child->hasChildren()){
+            if ($child->hasChildren()) {
                 $child->setAttribute('class', 'dropdown-submenu');
                 $child->setChildrenAttribute('class', 'dropdown-menu');
                 $this->addSubmenu($child);
             }
         }
     }
-
 
     /**
      * @param array $services
@@ -109,37 +110,36 @@ class MenuBuilder
     }
 
     /**
-     * @param ItemInterface $menu
+     * @param ItemInterface    $menu
      * @param FactoryInterface $factory
-     * @param string $typeMenu
+     * @param string           $typeMenu
      */
-    public function getServices(ItemInterface $menu,FactoryInterface $factory, string $typeMenu): void
+    public function getServices(ItemInterface $menu, FactoryInterface $factory, string $typeMenu): void
     {
-        foreach($this->services as $service){
-                $menu = $this->container->get($service)->addItems($menu, $factory, $typeMenu);
+        foreach ($this->services as $service) {
+            $menu = $this->container->get($service)->addItems($menu, $factory, $typeMenu);
         }
     }
 
     /**
      * @param ItemInterface $menu
      */
-    public function reorderMenuItems(ItemInterface $menu):void
+    public function reorderMenuItems(ItemInterface $menu): void
     {
-        $menuOrderArray = array();
+        $menuOrderArray = [];
 
-        $addLast = array();
+        $addLast = [];
 
-        $alreadyTaken = array();
+        $alreadyTaken = [];
 
         foreach ($menu->getChildren() as $key => $menuItem) {
-
             if ($menuItem->hasChildren()) {
                 $this->reorderMenuItems($menuItem);
             }
 
             $orderNumber = $menuItem->getExtra('orderNumber');
 
-            if ($orderNumber != null) {
+            if ($orderNumber !== null) {
                 if (!isset($menuOrderArray[$orderNumber])) {
                     $menuOrderArray[$orderNumber] = $menuItem->getName();
                 } else {
@@ -166,7 +166,7 @@ class MenuBuilder
                     continue;
                 }
 
-                $menuOrderArray = array_merge(array_slice($menuOrderArray, 0, $position), array($value), array_slice($menuOrderArray, $position));
+                $menuOrderArray = array_merge(array_slice($menuOrderArray, 0, $position), [$value], array_slice($menuOrderArray, $position));
             }
         }
 
@@ -183,8 +183,5 @@ class MenuBuilder
         if (count($menuOrderArray)) {
             $menu->reorderChildren($menuOrderArray);
         }
-
     }
-
-
 }

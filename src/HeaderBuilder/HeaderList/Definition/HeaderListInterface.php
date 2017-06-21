@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\Headerbuilder\HeaderList\Definition;
 
 interface HeaderListInterface
@@ -18,5 +20,4 @@ interface HeaderListInterface
      * @return string
      */
     public function getType(): string;
-
 }

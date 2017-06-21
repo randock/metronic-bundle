@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\Headerbuilder\Twig;
 
 use Randock\MetronicBundle\Headerbuilder\HeaderBuilder;
-use Symfony\Bundle\TwigBundle\DependencyInjection\TwigExtension;
 
 class MetronicHeaderBuilderExtension extends \Twig_Extension
 {
@@ -14,15 +15,13 @@ class MetronicHeaderBuilderExtension extends \Twig_Extension
 
     public function __construct(HeaderBuilder $headerBuilder)
     {
-
         $this->headerBuilder = $headerBuilder;
     }
 
     public function getFunctions()
     {
-        return array(
-            new \Twig_Function('getHeaderLists',array($this->headerBuilder, 'getServices'))
-        );
+        return [
+            new \Twig_Function('getHeaderLists', [$this->headerBuilder, 'getServices']),
+        ];
     }
-
 }

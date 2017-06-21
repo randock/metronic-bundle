@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\Headerbuilder\HeaderList\NotificationHeaderListItem;
 
 class NotificationHeaderListItem
@@ -55,6 +57,7 @@ class NotificationHeaderListItem
     public function setTitle(string $title): NotificationHeaderListItem
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -74,6 +77,7 @@ class NotificationHeaderListItem
     public function setSubtitle(string $subtitle): NotificationHeaderListItem
     {
         $this->subtitle = $subtitle;
+
         return $this;
     }
 
@@ -93,6 +97,7 @@ class NotificationHeaderListItem
     public function setUrl(string $url): NotificationHeaderListItem
     {
         $this->url = $url;
+
         return $this;
     }
 
@@ -112,6 +117,7 @@ class NotificationHeaderListItem
     public function setRightText(string $rightText)
     {
         $this->rightText = $rightText;
+
         return $this;
     }
 
@@ -131,6 +137,7 @@ class NotificationHeaderListItem
     public function setIcon(string $icon)
     {
         $this->icon = $icon;
+
         return $this;
     }
 
@@ -150,6 +157,7 @@ class NotificationHeaderListItem
     public function setIconType(string $iconType): NotificationHeaderListItem
     {
         $this->iconType = $iconType;
+
         return $this;
     }
 
@@ -169,8 +177,7 @@ class NotificationHeaderListItem
     public function setDownRightText(string $downRightText): NotificationHeaderListItem
     {
         $this->downRightText = $downRightText;
+
         return $this;
     }
-
-
 }

@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\Headerbuilder;
 
 use Symfony\Component\DependencyInjection\Container;
 
 class HeaderBuilder
 {
-
     private $services;
 
     private $container;
@@ -16,7 +17,8 @@ class HeaderBuilder
         $this->container = $container;
     }
 
-    public function setServices(array $services){
+    public function setServices(array $services)
+    {
         $this->services = $services;
     }
 
@@ -26,11 +28,10 @@ class HeaderBuilder
     public function getServices()
     {
         $services = [];
-        foreach($this->services as $service){
+        foreach ($this->services as $service) {
             $services[] = $this->container->get($service);
         }
 
         return $services;
     }
-
 }

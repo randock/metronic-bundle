@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\HeaderBuilder\HeaderList\TaskHeaderListItem;
 
 class TaskHeaderListItem
@@ -40,6 +42,7 @@ class TaskHeaderListItem
     public function setTitle(string $title): TaskHeaderListItem
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -59,6 +62,7 @@ class TaskHeaderListItem
     public function setUrl(string $url): TaskHeaderListItem
     {
         $this->url = $url;
+
         return $this;
     }
 
@@ -78,6 +82,7 @@ class TaskHeaderListItem
     public function setPercent(int $percent): TaskHeaderListItem
     {
         $this->percent = $percent;
+
         return $this;
     }
 
@@ -97,9 +102,7 @@ class TaskHeaderListItem
     public function setProgressBarType(string $progressBarType): TaskHeaderListItem
     {
         $this->progressBarType = $progressBarType;
+
         return $this;
     }
-
-
-
 }

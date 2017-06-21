@@ -1,13 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Randock\MetronicBundle\DependencyInjection\Compiler\Exception;
 
 /**
- * Class ServiceDoesNotImplementMenuItemProviderInterfaceException
+ * Class ServiceDoesNotImplementMenuItemProviderInterfaceException.
  */
 class ServiceDoesNotImplementMenuItemProviderInterfaceException extends \Exception
 {
-
     /**
      * ServiceNotImplementMenuItemProviderInterfaceException constructor.
      *
@@ -15,7 +16,6 @@ class ServiceDoesNotImplementMenuItemProviderInterfaceException extends \Excepti
      */
     public function __construct(string $class)
     {
-        parent::__construct(sprintf('The %s must implement MenuItemProviderInterface',$class));
+        parent::__construct(sprintf('The %s must implement MenuItemProviderInterface', $class));
     }
-
 }
