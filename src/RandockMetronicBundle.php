@@ -21,9 +21,11 @@ class RandockMetronicBundle extends Bundle
                         "bundles/randockmetronic/assets/global/plugins/font-awesome/css/font-awesome.min.css",
                         "bundles/randockmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
 
-                        "bundles/randockmetronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",
+                        "bundles/randockmetronic/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",                        
                         
                         "bundles/randockmetronic/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css",
+
+                        "bundles/randockmetronic/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css",
                     ),
                 ),
                 'randock_metronic_scss' => array(
@@ -47,6 +49,7 @@ class RandockMetronicBundle extends Bundle
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery.blockui.min.js",
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js",
+                        "@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
 
                         "@RandockMetronicBundle/Resources/public/assets/global/scripts/datatable.js",
                         "@RandockMetronicBundle/Resources/public/assets/global/plugins/datatables/datatables.min.js",
