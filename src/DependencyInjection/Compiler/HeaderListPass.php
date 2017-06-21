@@ -19,13 +19,21 @@ class HeaderListPass implements CompilerPassInterface
 
         $definition = $container->findDefinition('metronic.header_builder');
         $taggedServices = $container->findTaggedServiceIds('metronic.header_list');
-        foreach ($taggedServices as $service => $nothing) {
+        foreach ($taggedServices as $service => $tags) {
             $serviceDefinition = $container->findDefinition($service);
             $reflectionClass = new \ReflectionClass($serviceDefinition->getClass());
             if (!$reflectionClass->implementsInterface(HeaderListInterface::class)) {
                 throw new ServiceDoesNotImplementHeaderListInterfaceException($serviceDefinition->getClass());
             }
+            if (!array_key_exists('priority', $tags[0])) {
+                $sortedServices[$service] = INF;
+            } else {
+                $sortedServices[$service] = $tags[0]['priority'];
+            }
         }
-        $definition->addMethodCall('setServices', [array_keys($taggedServices)]);
+
+        asort($sortedServices);
+
+        $definition->addMethodCall('setServices', [array_keys($sortedServices)]);
     }
 }

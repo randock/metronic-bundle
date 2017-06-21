@@ -13,8 +13,11 @@ Example:
         - '@router'
         - '@translator'
     tags:
-        - { name: metronic.header_dropdown_list }
+        - { name: metronic.header_dropdown_list, priority: 10 }
 ```
+
+The priority is used to determine in which order the services will be called. The lower the number the earlier the service will be rendered. It will be rendered from left to right.
+
 
   
 1.2 Functions of the class:
