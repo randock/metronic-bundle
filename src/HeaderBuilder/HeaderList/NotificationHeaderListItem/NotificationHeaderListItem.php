@@ -185,5 +185,4 @@ class NotificationHeaderListItem
 
         return $this;
     }
-
 }

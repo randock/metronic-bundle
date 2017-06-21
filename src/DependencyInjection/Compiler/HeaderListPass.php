@@ -25,11 +25,8 @@ class HeaderListPass implements CompilerPassInterface
             if (!$reflectionClass->implementsInterface(HeaderListInterface::class)) {
                 throw new ServiceDoesNotImplementHeaderListInterfaceException($serviceDefinition->getClass());
             }
-            if (!array_key_exists('priority', $tags[0])) {
-                $sortedServices[$service] = INF;
-            } else {
-                $sortedServices[$service] = $tags[0]['priority'];
-            }
+
+            $sortedServices[$service] = $tags[0]['priority'] ?? INF;
         }
 
         asort($sortedServices);

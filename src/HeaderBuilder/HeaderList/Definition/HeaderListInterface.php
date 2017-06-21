@@ -24,4 +24,3 @@ interface HeaderListInterface
      */
     public function getType(): string;
 }
-

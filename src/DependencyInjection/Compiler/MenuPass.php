@@ -25,11 +25,7 @@ class MenuPass implements CompilerPassInterface
             if (!$reflectionClass->implementsInterface(MenuItemProviderInterface::class)) {
                 throw new ServiceDoesNotImplementMenuItemProviderInterfaceException($serviceDefinition->getClass());
             }
-            if (!array_key_exists('priority', $tags[0])) {
-                $sortedServices[$service] = INF;
-            } else {
-                $sortedServices[$service] = $tags[0]['priority'];
-            }
+            $sortedServices[$service] = $tags[0]['priority'] ?? INF;
         }
 
         asort($sortedServices);

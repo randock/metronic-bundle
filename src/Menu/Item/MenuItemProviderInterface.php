@@ -10,13 +10,12 @@ use Knp\Menu\FactoryInterface;
 interface MenuItemProviderInterface
 {
     /**
-     * Posible values of the option notificationType
+     * Posible values of the option notificationType.
      */
     public const SUCCESS = 'success';
     public const WARNING = 'warning';
     public const DANGER = 'danger';
     public const INFO = 'info';
-
 
     /**
      * @param ItemInterface    $menu
