@@ -104,7 +104,8 @@ $menu['Test']
     );
 ```
 
-The possible values for notificationType are: {MenuBuilder::SUCCESS, MenuBuilder::WARNING, MenuBuilder::DANGER, MenuBuilder::INFO} 
+The possible values for notificationType are: {MenuItemProviderInterface::SUCCESS, MenuItemProviderInterface::WARNING, MenuItemProviderInterface::DANGER, MenuItemProviderInterface::INFO} 
+
 ![menus2](img/menus2.png)
 
 
