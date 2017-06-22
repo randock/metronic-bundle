@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Randock\MetronicBundle\Headerbuilder\HeaderList\NotificationHeaderListItem;
+namespace Randock\MetronicBundle\HeaderBuilder\HeaderList\NotificationHeaderListItem;
 
 class NotificationHeaderListItem
 {

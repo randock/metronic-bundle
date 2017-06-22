@@ -1,12 +1,12 @@
 services:
 
     metronic.header_builder:
-        class: Randock\MetronicBundle\Headerbuilder\HeaderBuilder
+        class: Randock\MetronicBundle\HeaderBuilder\HeaderBuilder
         arguments:
             - '@service_container'
 
     metronic.getheaderlist.function:
-        class: Randock\MetronicBundle\Headerbuilder\Twig\MetronicHeaderBuilderExtension
+        class: Randock\MetronicBundle\HeaderBuilder\Twig\MetronicHeaderBuilderExtension
         arguments:
             - '@metronic.header_builder'
         tags:

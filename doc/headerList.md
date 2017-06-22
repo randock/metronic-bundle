@@ -2,7 +2,7 @@
  
 ### 1- Create a service 
 
-1.1 - Create a service whose class implements the interface Randock\MetronicBundle\Headerbuilder\HeaderList\Definition\HeaderListInterface; and tagged as name: metronic.header_dropdown_list
+1.1 - Create a service whose class implements the interface Randock\MetronicBundle\HeaderBuilder\HeaderList\Definition\HeaderListInterface; and tagged as name: metronic.header_dropdown_list
 
 Example: 
 ```yaml

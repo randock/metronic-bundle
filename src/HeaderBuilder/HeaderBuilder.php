@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Randock\MetronicBundle\Headerbuilder;
+namespace Randock\MetronicBundle\HeaderBuilder;
 
 use Symfony\Component\DependencyInjection\Container;
 

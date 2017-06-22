@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Randock\MetronicBundle\Headerbuilder\HeaderList\Definition;
+namespace Randock\MetronicBundle\HeaderBuilder\HeaderList\Definition;
 
 interface HeaderListInterface
 {

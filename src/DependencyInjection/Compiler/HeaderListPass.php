@@ -6,7 +6,7 @@ namespace Randock\MetronicBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use Randock\MetronicBundle\Headerbuilder\HeaderList\Definition\HeaderListInterface;
+use Randock\MetronicBundle\HeaderBuilder\HeaderList\Definition\HeaderListInterface;
 use Randock\MetronicBundle\DependencyInjection\Compiler\Exception\ServiceDoesNotImplementHeaderListInterfaceException;
 
 class HeaderListPass implements CompilerPassInterface
