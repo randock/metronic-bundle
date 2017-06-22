@@ -19,6 +19,9 @@ class HeaderListPass implements CompilerPassInterface
 
         $definition = $container->findDefinition('metronic.header_builder');
         $taggedServices = $container->findTaggedServiceIds('metronic.header_list');
+
+        $sortedServices = [];
+
         foreach ($taggedServices as $service => $tags) {
             $serviceDefinition = $container->findDefinition($service);
             $reflectionClass = new \ReflectionClass($serviceDefinition->getClass());
