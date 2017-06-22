@@ -32,7 +32,7 @@ The priority is used to determine in which order the services will be called. Th
   - iconType→ type of the icon, it will set the icon background. 
   Can have the values → {NotificationHeaderListItem::SUCCESS, NotificationHeaderListItem::WARNING, 
   NotificationHeaderListItem::INFO, NotificationHeaderListItem::DANGER}
-  - bottomRightText→ Text that will be at the down right corner (It isn’t in the picture)
+  - bottomRightText→ Text that will be at the bottom right corner.
 
 ![alt text](img/NotificationHeaderList.png)
 

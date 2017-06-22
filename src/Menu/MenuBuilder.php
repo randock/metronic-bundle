@@ -55,7 +55,7 @@ class MenuBuilder
         $menu = $this->factory->createItem('topmenu');
         $menu->setChildrenAttribute('class', 'dropdown-menu dropdown-menu-default');
 
-        $this->getServices($menu, $this->factory, self::TOP_MENU);
+        $this->loadServices($menu, $this->factory, self::TOP_MENU);
 
         $this->reorderMenuItems($menu);
 
@@ -73,7 +73,7 @@ class MenuBuilder
         $menu = $this->factory->createItem('mainmenu');
         $menu->setChildrenAttribute('class', 'nav navbar-nav');
 
-        $this->getServices($menu, $this->factory, self::MAIN_MENU);
+        $this->loadServices($menu, $this->factory, self::MAIN_MENU);
         foreach ($menu as $child) {
             if ($child->hasChildren()) {
                 $child->setAttribute('class', 'menu-dropdown classic-menu-dropdown');
@@ -117,7 +117,7 @@ class MenuBuilder
      * @param FactoryInterface $factory
      * @param string           $typeMenu
      */
-    public function getServices(ItemInterface $menu, FactoryInterface $factory, string $typeMenu): void
+    public function loadServices(ItemInterface $menu, FactoryInterface $factory, string $typeMenu): void
     {
         foreach ($this->services as $service) {
             $menu = $this->container->get($service)->addItems($menu, $factory, $typeMenu);
