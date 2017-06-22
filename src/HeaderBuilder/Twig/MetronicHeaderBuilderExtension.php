@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Randock\MetronicBundle\Headerbuilder\Twig;
+namespace Randock\MetronicBundle\HeaderBuilder\Twig;
 
-use Randock\MetronicBundle\Headerbuilder\HeaderBuilder;
+use Randock\MetronicBundle\HeaderBuilder\HeaderBuilder;
 
 class MetronicHeaderBuilderExtension extends \Twig_Extension
 {
