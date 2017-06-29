@@ -46,6 +46,7 @@
                         <!-- BEGIN PAGE HEAD-->
                         <div class="page-head">
                             <div class="container">
+                                {% block pageHeader %}
                                 <!-- BEGIN PAGE TITLE -->
                                 <div class="page-title">
                                     <h1>{% block title %} Title {% endblock %}
@@ -56,14 +57,17 @@
                                 <!-- BEGIN PAGE TOOLBAR -->
                                 <div class="page-toolbar">
                                     <!-- BEGIN THEME PANEL -->
-                                    <div class="btn-group btn-theme-panel">
+                                    {% block pageToolbar %}
+                                        <div class="btn-group btn-theme-panel">
                                         <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
                                             <i class="icon-settings"></i>
                                         </a>
                                     </div>
                                     <!-- END THEME PANEL -->
+                                    {% endblock %}
                                 </div>
                                 <!-- END PAGE TOOLBAR -->
+                                {% endblock %}
                             </div>
                         </div>
                         <!-- END PAGE HEAD-->
