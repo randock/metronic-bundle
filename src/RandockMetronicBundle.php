@@ -16,7 +16,7 @@ class RandockMetronicBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
-        $container->loadFromExtension('assetic', [
+        $assets = [
             'assets' => [
                 'randock_metronic_css' => [
                     'inputs' => [
@@ -26,21 +26,19 @@ class RandockMetronicBundle extends Bundle
                         'bundles/randockmetronic/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
                     ],
                 ],
-                'randock_metronic_scss' => [
-                    'inputs' => [
-                        'bundles/randockmetronic/sass/bootstrap.scss',
-                        'bundles/randockmetronic/sass/global/components-md.scss',
-                        'bundles/randockmetronic/sass/global/plugins-md.scss'
-                    ],
-                ],
                 'randock_metronic_scss_layout3' => [
-                    '@randock_metronic_scss',
+                    'bundles/randockmetronic/sass/bootstrap.scss',
+                    'bundles/randockmetronic/sass/global/components-md.scss',
+                    'bundles/randockmetronic/sass/global/plugins-md.scss',
+
                     'bundles/randockmetronic/sass/layouts/layout3/layout.scss',
                     'bundles/randockmetronic/sass/layouts/layout3/themes/default.scss',
                     'bundles/randockmetronic/sass/layouts/layout3/custom.scss'
                 ],
                 'randock_metronic_scss_layout1' => [
-                    '@randock_metronic_scss',
+                    'bundles/randockmetronic/sass/bootstrap.scss',
+                    'bundles/randockmetronic/sass/global/components-md.scss',
+                    'bundles/randockmetronic/sass/global/plugins-md.scss',
                     'bundles/randockmetronic/sass/layouts/layout/layout.scss',
                     'bundles/randockmetronic/sass/layouts/layout/themes/grey.scss',
                     'bundles/randockmetronic/sass/layouts/layout/custom.scss'
@@ -71,7 +69,10 @@ class RandockMetronicBundle extends Bundle
                     ],
                 ],
             ],
-        ]);
+        ];
+        $assets['assets']['randock_metronic_scss'] = $assets['assets']['randock_metronic_scss_layout3'];
+
+        $container->loadFromExtension('assetic', $assets);
 
         $container->loadFromExtension('twig', [
             'paths' => [
