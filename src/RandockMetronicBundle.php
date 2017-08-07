@@ -27,9 +27,11 @@ class RandockMetronicBundle extends Bundle
                     ],
                 ],
                 'randock_metronic_scss' => [
-                    'bundles/randockmetronic/sass/bootstrap.scss',
-                    'bundles/randockmetronic/sass/global/components-md.scss',
-                    'bundles/randockmetronic/sass/global/plugins-md.scss',
+                    'inputs' => [
+                        'bundles/randockmetronic/sass/bootstrap.scss',
+                        'bundles/randockmetronic/sass/global/components-md.scss',
+                        'bundles/randockmetronic/sass/global/plugins-md.scss',
+                    ]
                 ],
                 'randock_metronic_scss_layout1' => [
                     'inputs' => [
