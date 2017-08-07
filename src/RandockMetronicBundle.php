@@ -29,15 +29,23 @@ class RandockMetronicBundle extends Bundle
                 'randock_metronic_scss' => [
                     'inputs' => [
                         'bundles/randockmetronic/sass/bootstrap.scss',
-
                         'bundles/randockmetronic/sass/global/components-md.scss',
-                        'bundles/randockmetronic/sass/global/plugins-md.scss',
-
-                        'bundles/randockmetronic/sass/layouts/layout3/layout.scss',
-                        'bundles/randockmetronic/sass/layouts/layout3/themes/default.scss',
-                        'bundles/randockmetronic/sass/layouts/layout3/custom.scss',
+                        'bundles/randockmetronic/sass/global/plugins-md.scss'
                     ],
                 ],
+                'randock_metronic_scss_layout3' => [
+                    '@randock_metronic_scss',
+                    'bundles/randockmetronic/sass/layouts/layout3/layout.scss',
+                    'bundles/randockmetronic/sass/layouts/layout3/themes/default.scss',
+                    'bundles/randockmetronic/sass/layouts/layout3/custom.scss'
+                ],
+                'randock_metronic_scss_layout1' => [
+                    '@randock_metronic_scss',
+                    'bundles/randockmetronic/sass/layouts/layout/layout.scss',
+                    'bundles/randockmetronic/sass/layouts/layout/themes/grey.scss',
+                    'bundles/randockmetronic/sass/layouts/layout/custom.scss'
+                ],
+
                 'randock_metronic_js' => [
                     'inputs' => [
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery.min.js',
