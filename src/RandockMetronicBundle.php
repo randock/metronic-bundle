@@ -67,12 +67,23 @@ class RandockMetronicBundle extends Bundle
 
                         '@RandockMetronicBundle/Resources/public/assets/global/scripts/app.min.js',
 
-                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/layout.min.js',
-                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/demo.js',
                         '@RandockMetronicBundle/Resources/public/assets/layouts/global/scripts/quick-sidebar.min.js',
                         '@RandockMetronicBundle/Resources/public/assets/layouts/global/scripts/quick-nav.min.js',
                     ],
                 ],
+                'randock_metronic_js_layout3' => [
+                    'inputs' => [
+                        '@randock_metronic_js',
+                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/layout.min.js',
+                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/demo.js'
+                    ]
+                ],
+                'randock_metronic_js_layout1' => [
+                    'inputs' => [
+                        '@randock_metronic_js',
+                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout/scripts/layout.min.js'
+                    ]
+                ]
             ],
         ]);
 
