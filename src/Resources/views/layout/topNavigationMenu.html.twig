@@ -21,9 +21,10 @@
         </li>
 
         <!-- BEGIN USER LOGIN DROPDOWN -->
-        <li class="dropdown dropdown-user dropdown-dark">
+        <li class="dropdown dropdown-user{% if layout == 3 %} dropdown-dark{% endif %}">
             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                 <span class="username">{% block username %}{% endblock %}</span>
+                <i class="fa fa-angle-down"></i>
             </a>
             {{ knp_menu_render(
                 'topMenu',
