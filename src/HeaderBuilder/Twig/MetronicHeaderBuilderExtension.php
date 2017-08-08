@@ -21,7 +21,7 @@ class MetronicHeaderBuilderExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_Function('getHeaderLists', [$this->headerBuilder, 'getServices']),
+            new \Twig_SimpleFunction('getHeaderLists', [$this->headerBuilder, 'getServices']),
         ];
     }
 }
