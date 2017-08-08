@@ -29,14 +29,25 @@ class RandockMetronicBundle extends Bundle
                 'randock_metronic_scss' => [
                     'inputs' => [
                         'bundles/randockmetronic/sass/bootstrap.scss',
-
                         'bundles/randockmetronic/sass/global/components-md.scss',
                         'bundles/randockmetronic/sass/global/plugins-md.scss',
-
+                    ]
+                ],
+                'randock_metronic_scss_layout1' => [
+                    'inputs' => [
+                        '@randock_metronic_scss',
+                        'bundles/randockmetronic/sass/layouts/layout/layout.scss',
+                        'bundles/randockmetronic/sass/layouts/layout/themes/grey.scss',
+                        'bundles/randockmetronic/sass/layouts/layout/custom.scss'
+                    ]
+                ],
+                'randock_metronic_scss_layout3' => [
+                    'inputs' => [
+                        '@randock_metronic_scss',
                         'bundles/randockmetronic/sass/layouts/layout3/layout.scss',
                         'bundles/randockmetronic/sass/layouts/layout3/themes/default.scss',
-                        'bundles/randockmetronic/sass/layouts/layout3/custom.scss',
-                    ],
+                        'bundles/randockmetronic/sass/layouts/layout3/custom.scss'
+                    ]
                 ],
                 'randock_metronic_js' => [
                     'inputs' => [
@@ -56,12 +67,23 @@ class RandockMetronicBundle extends Bundle
 
                         '@RandockMetronicBundle/Resources/public/assets/global/scripts/app.min.js',
 
-                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/layout.min.js',
-                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/demo.js',
                         '@RandockMetronicBundle/Resources/public/assets/layouts/global/scripts/quick-sidebar.min.js',
                         '@RandockMetronicBundle/Resources/public/assets/layouts/global/scripts/quick-nav.min.js',
                     ],
                 ],
+                'randock_metronic_js_layout3' => [
+                    'inputs' => [
+                        '@randock_metronic_js',
+                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/layout.min.js',
+                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/scripts/demo.js'
+                    ]
+                ],
+                'randock_metronic_js_layout1' => [
+                    'inputs' => [
+                        '@randock_metronic_js',
+                        '@RandockMetronicBundle/Resources/public/assets/layouts/layout/scripts/layout.min.js'
+                    ]
+                ]
             ],
         ]);
 
