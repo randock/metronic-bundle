@@ -28,8 +28,19 @@
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
 
-            {% block topNavigationMenu %}{%  include 'RandockMetronicBundle:layout:topNavigationMenu.html.twig' with { layout: 1 } %}{%  endblock %}
-                            <!-- END TOP NAVIGATION MENU -->
+            {% set overrideUsernameBlock %}
+                {% block username %}{% endblock %}
+            {% endset %}
+
+            {% block topNavigationMenu %}
+                {%  embed 'RandockMetronicBundle:layout:topNavigationMenu.html.twig' with { layout:1  } %}
+                    {% block username %}
+                        {{ overrideUsernameBlock }}
+                    {% endblock %}
+                {% endembed %}
+            {%  endblock %}
+
+            <!-- END TOP NAVIGATION MENU -->
                         </div>
                     </div>
                     <!-- END HEADER TOP -->
