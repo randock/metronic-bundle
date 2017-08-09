@@ -25,7 +25,17 @@
                             <a href="javascript:;" class="menu-toggler"></a>
                             <!-- END RESPONSIVE MENU TOGGLER -->
                             <!-- BEGIN TOP NAVIGATION MENU -->
-                            {% block topNavigationMenu %}{%  include 'RandockMetronicBundle:layout:topNavigationMenu.html.twig' with { layout: 3 } %}{%  endblock %}
+                            {% set overrideUsernameBlock %}
+                                {% block username %}{% endblock %}
+                            {% endset %}
+
+                            {% block topNavigationMenu %}
+                                {%  embed 'RandockMetronicBundle:layout:topNavigationMenu.html.twig' with { layout: 3 } %}
+                                    {% block username %}
+                                        {{ overrideUsernameBlock }}
+                                    {% endblock %}
+                                {% endembed %}
+                            {%  endblock %}
                             <!-- END TOP NAVIGATION MENU -->
                         </div>
                     </div>
