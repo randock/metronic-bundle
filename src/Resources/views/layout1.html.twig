@@ -130,7 +130,26 @@
                 <small>{% block subtitle %} subtitle {% endblock %}</small>
             </h1>
 
-            {% block content %}
+            {% block flashMessages %}
+
+                <div class = "row margin-top">
+
+                    <!-- Flash messages -->
+                    <div class="col-md-12">
+                        {% for type, flash_messages in app.session.flashBag.all %}
+                            {% for flash_message in flash_messages %}
+                                <div class="alert alert-{{ type }}">
+                                    {{ flash_message }}
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <!-- end Flash messages -->
+
+                </div>
+            {%  endblock %}
+
+                {% block content %}
 
             {% endblock %}
             </div>
