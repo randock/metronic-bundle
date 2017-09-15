@@ -24,6 +24,11 @@ class RandockMetronicBundle extends Bundle
                         'bundles/randockmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css',
                         'bundles/randockmetronic/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css',
                         'bundles/randockmetronic/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
+                        'bundles/randockmetronic/assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css',
+                        'bundles/randockmetronic/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css',
+                        'bundles/randockmetronic/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css',
+                        'bundles/randockmetronic/assets/global/plugins/dropzone/dropzone.min.css',
+                        'bundles/randockmetronic/assets/global/plugins/dropzone/basic.min.css'
                     ],
                 ],
                 'randock_metronic_scss' => [
@@ -52,6 +57,7 @@ class RandockMetronicBundle extends Bundle
                 'randock_metronic_js' => [
                     'inputs' => [
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery.min.js',
+                        '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery.ui.widget.js',
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap/js/bootstrap.min.js',
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/js.cookie.min.js',
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
@@ -59,6 +65,13 @@ class RandockMetronicBundle extends Bundle
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js',
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js',
+
+                        '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js',
+                        '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js',
+                        '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js',
+                        '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js',
+                        '@RandockMetronicBundle/Resources/public/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js',
+                        '@RandockMetronicBundle/Resources/public/assets/global/plugins/dropzone/dropzone.min.js',
 
                         '@RandockMetronicBundle/Resources/public/assets/global/scripts/datatable.js',
                         '@RandockMetronicBundle/Resources/public/assets/global/plugins/datatables/datatables.min.js',
