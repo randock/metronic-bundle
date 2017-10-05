@@ -41,7 +41,28 @@
                     </div>
                     <!-- END HEADER TOP -->
                     <!-- BEGIN HEADER MENU -->
-                    {% block headerMenu %}{%  include 'RandockMetronicBundle:layout:headerMenu.html.twig' %}{%  endblock %}
+                    {% set overrideHeaderSearchBlock %}
+                        {% block headerSearch %}
+                            <form class="search-form" action="page_general_search.html" method="GET">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="query">
+                                    <span class="input-group-btn">
+                                            <a href="javascript:;" class="btn submit">
+                                                <i class="icon-magnifier"></i>
+                                            </a>
+                                        </span>
+                                </div>
+                            </form>
+                        {% endblock %}
+                    {% endset %}
+
+                    {% block headerMenu %}
+                        {%  embed 'RandockMetronicBundle:layout:headerMenu.html.twig' %}
+                            {% block headerSearch %}
+                                {{ overrideHeaderSearchBlock }}
+                            {% endblock %}
+                        {% endembed %}
+                    {%  endblock %}
                     <!-- END HEADER MENU -->
                 </div>
                 <!-- END HEADER -->
