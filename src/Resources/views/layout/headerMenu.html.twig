@@ -1,6 +1,7 @@
 <div class="page-header-menu">
     <div class="container">
         <!-- BEGIN HEADER SEARCH BOX -->
+        {% block headerSearch %}
         <form class="search-form" action="page_general_search.html" method="GET">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search" name="query">
@@ -11,6 +12,7 @@
                                         </span>
             </div>
         </form>
+        {% endblock %}
         <!-- END HEADER SEARCH BOX -->
         <!-- BEGIN MEGA MENU -->
         <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
