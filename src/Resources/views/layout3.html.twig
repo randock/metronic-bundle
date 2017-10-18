@@ -12,14 +12,17 @@
                     <div class="page-header-top">
                         <div class="container">
                             <!-- BEGIN LOGO -->
-                            <div class="page-logo">
-                                <a href="/">
-                                    {% image '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/img/logo-default.jpg' %}
-                                    <img src="{{ asset_url }}" alt="logo" class="logo-default" />
-                                    {% endimage %}
-                                </a>
-                            </div>
-
+                            {% block logo %}
+                                <div class="page-logo">
+                                    {% block logoLink %}
+                                        <a href="/">
+                                            {% image '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/img/logo-default.jpg' %}
+                                            <img src="{{ asset_url }}" alt="logo" class="logo-default" />
+                                            {% endimage %}
+                                        </a>
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
                             <!-- END LOGO -->
                             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
                             <a href="javascript:;" class="menu-toggler"></a>
