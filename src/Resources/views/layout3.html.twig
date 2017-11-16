@@ -28,14 +28,13 @@
                             <a href="javascript:;" class="menu-toggler"></a>
                             <!-- END RESPONSIVE MENU TOGGLER -->
                             <!-- BEGIN TOP NAVIGATION MENU -->
-                            {% set overrideUsernameBlock %}
-                                {% block username %}{% endblock %}
+                            {% set overrideUseAvatarBlock %}
+                                {% block userAvatar %}{% endblock %}
                             {% endset %}
-
                             {% block topNavigationMenu %}
                                 {%  embed 'RandockMetronicBundle:layout:topNavigationMenu.html.twig' with { layout: 3 } %}
-                                    {% block username %}
-                                        {{ overrideUsernameBlock }}
+                                    {% block userAvatar %}
+                                        {{ overrideUseAvatarBlock }}
                                     {% endblock %}
                                 {% endembed %}
                             {%  endblock %}
