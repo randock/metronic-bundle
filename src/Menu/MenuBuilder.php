@@ -91,8 +91,6 @@ abstract class MenuBuilder
 
         $addLast = [];
 
-        $alreadyTaken = [];
-
         foreach ($menu->getChildren() as $key => $menuItem) {
             if ($menuItem->hasChildren()) {
                 $this->reorderMenuItems($menuItem);
@@ -101,43 +99,21 @@ abstract class MenuBuilder
             $orderNumber = $menuItem->getExtra('orderNumber');
 
             if ($orderNumber !== null) {
-                if (!isset($menuOrderArray[$orderNumber])) {
-                    $menuOrderArray[$orderNumber] = $menuItem->getName();
-                } else {
-                    $alreadyTaken[$orderNumber] = $menuItem->getName();
-                    // $alreadyTaken[] = array('orderNumber' => $orderNumber, 'name' => $menuItem->getName());
-                }
+                $menuOrderArray[$menuItem->getName()] = $orderNumber;
             } else {
                 $addLast[] = $menuItem->getName();
             }
         }
 
         // sort them after first pass
-        ksort($menuOrderArray);
+        asort($menuOrderArray);
 
-        // handle position duplicates
-        if (count($alreadyTaken)) {
-            foreach ($alreadyTaken as $key => $value) {
-                // the ever shifting target
-                $keysArray = array_keys($menuOrderArray);
-
-                $position = array_search($key, $keysArray);
-
-                if ($position === false) {
-                    continue;
-                }
-
-                $menuOrderArray = array_merge(array_slice($menuOrderArray, 0, $position), [$value], array_slice($menuOrderArray, $position));
-            }
-        }
-
-        // sort them after second pass
-        ksort($menuOrderArray);
+        $menuOrderArray = array_keys($menuOrderArray);
 
         // add items without ordernumber to the end
         if (count($addLast)) {
-            foreach ($addLast as $key => $value) {
-                $menuOrderArray[] = $value;
+            foreach ($addLast as $item) {
+                $menuOrderArray[] = $item;
             }
         }
 
