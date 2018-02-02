@@ -77,34 +77,36 @@
                     <!-- BEGIN CONTENT -->
                     <div class="page-content-wrapper">
                         <!-- BEGIN CONTENT BODY -->
-                        <!-- BEGIN PAGE HEAD-->
-                        <div class="page-head">
-                            <div class="container">
-                                {% block pageHeader %}
-                                <!-- BEGIN PAGE TITLE -->
-                                <div class="page-title">
-                                    <h1>{% block title %} Title {% endblock %}
-                                        <small>{% block subtitle %} subtitle {% endblock %}</small>
-                                    </h1>
-                                </div>
-                                <!-- END PAGE TITLE -->
-                                <!-- BEGIN PAGE TOOLBAR -->
-                                <div class="page-toolbar">
-                                    <!-- BEGIN THEME PANEL -->
-                                    {% block pageToolbar %}
-                                        <div class="btn-group btn-theme-panel">
-                                        <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
-                                            <i class="icon-settings"></i>
-                                        </a>
-                                    </div>
-                                    <!-- END THEME PANEL -->
+                        {% block pageHead %}
+                            <!-- BEGIN PAGE HEAD-->
+                            <div class="page-head">
+                                <div class="container">
+                                    {% block pageHeader %}
+                                        <!-- BEGIN PAGE TITLE -->
+                                        <div class="page-title">
+                                            <h1>{% block title %} Title {% endblock %}
+                                                <small>{% block subtitle %} subtitle {% endblock %}</small>
+                                            </h1>
+                                        </div>
+                                        <!-- END PAGE TITLE -->
+                                        <!-- BEGIN PAGE TOOLBAR -->
+                                        <div class="page-toolbar">
+                                            <!-- BEGIN THEME PANEL -->
+                                            {% block pageToolbar %}
+                                                <div class="btn-group btn-theme-panel">
+                                                    <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="icon-settings"></i>
+                                                    </a>
+                                                </div>
+                                                <!-- END THEME PANEL -->
+                                            {% endblock %}
+                                        </div>
+                                        <!-- END PAGE TOOLBAR -->
                                     {% endblock %}
                                 </div>
-                                <!-- END PAGE TOOLBAR -->
-                                {% endblock %}
                             </div>
-                        </div>
-                        <!-- END PAGE HEAD-->
+                            <!-- END PAGE HEAD-->
+                        {% endblock %}
                         <!-- BEGIN PAGE CONTENT BODY -->
                         <div class="page-content">
                             <div class="container">
