@@ -31,8 +31,14 @@
                             {% set overrideUseAvatarBlock %}
                                 {% block userAvatar %}{% endblock %}
                             {% endset %}
+                            {% set overrideUseQuickSendBlock %}
+                                {% block quickSend %}{% endblock %}
+                            {% endset %}
                             {% block topNavigationMenu %}
                                 {%  embed 'RandockMetronicBundle:layout:topNavigationMenu.html.twig' with { layout: 3 } %}
+                                    {% block quickSend %}
+                                        {{ overrideUseQuickSendBlock }}
+                                    {% endblock %}
                                     {% block userAvatar %}
                                         {{ overrideUseAvatarBlock }}
                                     {% endblock %}
