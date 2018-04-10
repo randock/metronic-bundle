@@ -20,6 +20,16 @@
             <span class="separator"></span>
         </li>
 
+
+        <!-- BEGIN QUICKSEND BUTTON -->
+        <li class="dropdown dropdown-user{% if layout == 3 %} dropdown-dark{% endif %}">
+            {% block quickSend %}{% endblock %}
+        </li>
+        <li class="droddown dropdown-separator">
+            <span class="separator"></span>
+        </li>
+
+
         <!-- BEGIN USER LOGIN DROPDOWN -->
         <li class="dropdown dropdown-user{% if layout == 3 %} dropdown-dark{% endif %}">
             <a href="javascript:;"
