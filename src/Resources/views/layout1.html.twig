@@ -7,20 +7,19 @@
     <div class="page-header navbar navbar-fixed-top">
         <!-- BEGIN HEADER INNER -->
         <div class="page-header-inner">
-            <!-- BEGIN LOGO -->
-            <div class="page-logo">
 
-                <a href="/">
-
-                    {% image '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/img/logo-default.jpg' %}
-                    <img src="{{ asset_url }}" alt="logo" class="logo-default" />
-                    {% endimage %}
-                     </a>
-                <div class="menu-toggler sidebar-toggler">
-                    <span></span>
+            {% block logo %}
+                <div class="page-logo">
+                    {% block logoLink %}
+                        <a href="/">
+                            {% image '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/img/logo-default.jpg' %}
+                                <img src="{{ asset_url }}" alt="logo" class="logo-default" />
+                            {% endimage %}
+                        </a>
+                    {% endblock %}
                 </div>
-            </div>
-            <!-- END LOGO -->
+            {% endblock %}
+
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
             <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
                 <span></span>
