@@ -1013,5 +1013,9 @@ export var App = function() {
 
 }();
 
-
 App.init(); // init metronic core componets
+if (App.isAngularJsApp() === false) {
+    jQuery(document).ready(function() {
+        App.init(); // init metronic core componets
+    });
+}

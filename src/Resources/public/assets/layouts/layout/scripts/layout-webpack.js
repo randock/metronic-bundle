@@ -1,7 +1,7 @@
 /**
  Core script to handle the entire theme and core functions
  **/
-import {App} from '../../../global/scripts/app';
+import {App} from '../../../global/scripts/app-webpack';
 
 var Layout = function () {
 
