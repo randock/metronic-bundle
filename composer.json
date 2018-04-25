@@ -9,7 +9,8 @@
     }
   },
   "require": {
-    "knplabs/knp-menu-bundle": "^2.1"
+    "knplabs/knp-menu-bundle": "^2.1",
+    "symfony/twig-bundle": ">3.3"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "*",
