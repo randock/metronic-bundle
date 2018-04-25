@@ -26,14 +26,9 @@
 
 <!-- END QUICK NAV -->
 <!--[if lt IE 9]>
-{% javascripts
-"@RandockMetronicBundle/Resources/public/assets/global/plugins/respond.min.js"
-"@RandockMetronicBundle/Resources/public/assets/global/plugins/excanvas.min.js"
-"@RandockMetronicBundle/Resources/public/assets/global/plugins/ie8.fix.min.js"
-filter = '?uglifyjs2'
-%}
-<script src="{{ asset_url }}"></script>
-{% endjavascripts %}
+<script src="{{ asset('bundles/randockmetronic/assets/global/plugins/respond.min.js') }}"></script>
+<script src="{{ asset('bundles/randockmetronic/assets/global/plugins/excanvas.min.js') }}"></script>
+<script src="{{ asset('bundles/randockmetronic/assets/global/plugins/ie8.fix.min.js') }}"></script>
 <![endif]-->
 
 {% block javascript %}

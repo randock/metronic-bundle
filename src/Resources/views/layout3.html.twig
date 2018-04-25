@@ -1,4 +1,4 @@
-{%  extends 'RandockMetronicBundle::base.html.twig' %}
+{%  extends '@RandockMetronic/base.html.twig' %}
 
 {%  block body_class %}page-container-bg-solid page-md{%  endblock %}
 {% block body %}
@@ -16,9 +16,7 @@
                                 <div class="page-logo">
                                     {% block logoLink %}
                                         <a href="/">
-                                            {% image '@RandockMetronicBundle/Resources/public/assets/layouts/layout3/img/logo-default.jpg' %}
-                                            <img src="{{ asset_url }}" alt="logo" class="logo-default" />
-                                            {% endimage %}
+                                            <img src="{{ asset('bundles/randockmetronic/assets/layouts/layout3/img/logo-default.jpg') }}" alt="logo" class="logo-default" />
                                         </a>
                                     {% endblock %}
                                 </div>
@@ -35,7 +33,7 @@
                                 {% block quickSend %}{% endblock %}
                             {% endset %}
                             {% block topNavigationMenu %}
-                                {%  embed 'RandockMetronicBundle:layout:topNavigationMenu.html.twig' with { layout: 3 } %}
+                                {%  embed '@RandockMetronic/layout/topNavigationMenu.html.twig' with { layout: 3 } %}
                                     {% block quickSend %}
                                         {{ overrideUseQuickSendBlock }}
                                     {% endblock %}
@@ -65,7 +63,7 @@
                     {% endset %}
 
                     {% block headerMenu %}
-                        {%  embed 'RandockMetronicBundle:layout:headerMenu.html.twig' %}
+                        {%  embed '@RandockMetronic/layout/headerMenu.html.twig' %}
                             {% block headerSearch %}
                                 {{ overrideHeaderSearchBlock }}
                             {% endblock %}
@@ -160,7 +158,7 @@
             <div class="page-wrapper-bottom">
                 <!-- BEGIN FOOTER -->
                 <!-- BEGIN INNER FOOTER -->
-                {% block footer %}{%  include 'RandockMetronicBundle:layout:footer.html.twig' with { layout: 3 } %}{%  endblock %}
+                {% block footer %}{%  include 'RandockMetronicBundle/layout/footer.html.twig' with { layout: 3 } %}{%  endblock %}
                 <!-- END INNER FOOTER -->
                 <!-- END FOOTER -->
             </div>
