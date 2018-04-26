@@ -1,6 +1,7 @@
 /**
 Core script to handle the entire theme and core functions
 **/
+
 var Layout = function () {
 
     var layoutImgPath = 'layouts/layout/img/';  

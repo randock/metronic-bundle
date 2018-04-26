@@ -7,11 +7,11 @@
         {% for service in getHeaderLists() %}
 
             {% if service.getType == 'notification' %}
-                {%  include 'RandockMetronicBundle:layout/headerLists:NotificationHeaderListTemplate.html.twig' with { items: service.getItems(), options: service.getOptions() } %}
+                {%  include '@RandockMetronic/layout/headerLists/NotificationHeaderListTemplate.html.twig' with { items: service.getItems(), options: service.getOptions() } %}
             {%  endif %}
 
             {% if service.getType == 'task' %}
-                {%  include 'RandockMetronicBundle:layout/headerLists:TaskHeaderListTemplate.html.twig' with { items: service.getItems(), options: service.getOptions() } %}
+                {%  include '@RandockMetronic/layout/headerLists/TaskHeaderListTemplate.html.twig' with { items: service.getItems(), options: service.getOptions() } %}
             {%  endif %}
 
         {%  endfor %}
@@ -46,13 +46,13 @@
                 {%  endif %}
             </a>
             {{ knp_menu_render(
-            'topMenu',
-            {   'depth': 1,
-                'ancestorClass' : 'active',
-                'firstClass': null,
-                'lastClass': null,
-                'template' : 'RandockMetronicBundle:menu:topMenu.html.twig',
-            }
+                'topMenu',
+                {   'depth': 1,
+                    'ancestorClass' : 'active',
+                    'firstClass': null,
+                    'lastClass': null,
+                    'template' : '@RandockMetronic/menu/topMenu.html.twig',
+                }
             ) }}
 
         </li>
