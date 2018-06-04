@@ -4,12 +4,15 @@
 
         {% if options.icon is defined %}
             <i class="{{ options.icon }}"></i>
+
+        {% elseif options.label is defined %}
+            <span class="{% if options.class is defined and options.class is not empty %}{{ options.class }}{% endif %}">{{ options.label }}</span>
         {% else %}
             <i class="icon-bell"></i>
         {% endif %}
 
         {% if items|length > 0 %}
-        <span class="badge badge-default">{{ items|length }}</span>
+            <span class="badge badge-default{% if options.badgeClass is defined and options.badgeClass is not empty %} {{ options.badgeClass }}{% endif %}">{{ items|length }}</span>
         {% endif %}
     </a>
     <ul class="dropdown-menu">
